@@ -1,14 +1,18 @@
 import * as S from "./styles";
 
-const ClosedGym = () => {
+interface ClosedGymProps {
+  check?: boolean;
+}
+
+const ClosedGym = ({ check }: ClosedGymProps) => {
   return (
     <S.Section>
       <div>
         <input type="checkbox" name="" id="" />
-        <label htmlFor="">Exibir Unidade Fechadas</label>
+        <label htmlFor="">View Closed Units</label>
       </div>
       <div>
-        <p>Resultados Encontrados: </p>
+        <p>Results Found:0</p>
       </div>
     </S.Section>
   );

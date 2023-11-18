@@ -4,6 +4,8 @@ export const Section = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px;
+  
   
   div {
     display: flex;
@@ -12,7 +14,6 @@ export const Section = styled.section`
     font-weight: bold;
 
     p {
-      padding: 0 20px;
       font-weight: bold;
       color: var(--dark-grey);
     }

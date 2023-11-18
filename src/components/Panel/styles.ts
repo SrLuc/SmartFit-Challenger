@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMain = styled.main`
-  margin: 0 70px 30px 70px;
-  padding: 10px;
+  margin: 0 40px;
   border: 4px solid var(--light-grey);
   border-radius: 8px;
 
@@ -10,8 +9,8 @@ export const StyledMain = styled.main`
   flex-direction: column;
 
   section {
+    padding: 10px;
     display: flex;
-    padding: 25px;
     align-items: center;
     gap: 24px;
 
@@ -23,7 +22,6 @@ export const StyledMain = styled.main`
   p {
     font-size: 20px;
     font-weight: 300;
-    padding: 0 5px;
-    padding-bottom: 10px;
+    padding: 5px 10px;
   }
 `;

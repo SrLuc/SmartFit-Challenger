@@ -2,6 +2,9 @@ import * as S from "./styles";
 import Options from "../UIelements/Option/Options";
 import iconHour from "../../assets/icon-hour.png";
 import ClosedGym from "../UIelements/ClosedGym/ClosedGym";
+import SearchButton from "../UIelements/Buttons/SearchButton";
+import ClearButton from "../UIelements/Buttons/ClearButton";
+import Container from "../UIelements/ContainerFlex";
 
 const Panel = () => {
   return (
@@ -16,7 +19,11 @@ const Panel = () => {
       <Options name="Morning" hour="06:00/12:00" />
       <Options name="Afternoon" hour="12:00/18:00" />
       <Options name="Night" hour="18:00/00:00" />
-      <ClosedGym />
+      <ClosedGym check={false} />
+      <Container>
+        <SearchButton />
+        <ClearButton />
+      </Container>
     </S.StyledMain>
   );
 };
