@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Nav = styled.nav`
+export const Nav = styled.nav`
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -40,24 +40,3 @@ const Nav = styled.nav`
     color: var(--dark-grey);
   }
 `;
-
-interface OptionsProps {
-  name: string;
-  hour: string;
-}
-
-const Options = ({ name, hour }: OptionsProps) => {
-  return (
-    <Nav>
-      <span>
-        <input type="checkbox" name="" id="" />
-        <label htmlFor="">{name}</label>
-      </span>
-      <article>
-        <span>{hour}</span>
-      </article>
-    </Nav>
-  );
-};
-
-export default Options;
