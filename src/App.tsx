@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Heading from "./components/Heading";
+import Panel from "./components/Panel";
 
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
     <>
       <Header />
       <Heading />
+      <Panel />
     </>
   );
 };
