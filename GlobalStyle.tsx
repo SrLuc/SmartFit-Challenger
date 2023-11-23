@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
  }
 
+
  :root{
    --dark-grey: #333333;
    --light-grey: #b4aeae;

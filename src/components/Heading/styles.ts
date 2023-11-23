@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledHeading = styled.div`
   padding: 40px;
+  margin: 0 70px;
   
   h1 {
     font-size: 3rem;
