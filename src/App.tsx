@@ -1,6 +1,7 @@
 import Header from "./components/Header/Header";
 import Heading from "./components/Heading/Heading";
 import Panel from "./components/Panel/Panel";
+import Conducts from "./components/Conducts/Conducts";
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Header />
       <Heading />
       <Panel />
+      <Conducts />
     </>
   );
 };

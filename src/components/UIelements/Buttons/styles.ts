@@ -30,6 +30,6 @@ export const StyledClearButton = styled.button`
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    color: #f1f1f1;
+    background-color: #f7aa01;
   }
 `;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 const StyledContainer = styled.div`
   display: flex;
   width: 100%;
+
 `;
 
 interface ContainerProps {
