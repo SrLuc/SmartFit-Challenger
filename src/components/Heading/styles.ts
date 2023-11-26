@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const StyledHeading = styled.div`
-  padding: 40px;
+  padding: 30px 0;
   margin: 0 70px;
-  
+
   h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -11,7 +11,7 @@ export const StyledHeading = styled.div`
   }
 
   hr {
-    width: 30%;
+    width: 10%;
     height: 15px;
     background-color: var(--dark-grey);
     border: none;
