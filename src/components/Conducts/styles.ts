@@ -1,27 +1,19 @@
 import styled from "styled-components";
 
-export const styledConductios = styled.main`
-  display: flex;
-  margin: 20px 105px;
-  //alterar dps
-  height: 250px;
-  padding: 20px;
-  border: 4px solid var(--light-grey);
+export const StyledConductPanel = styled.section`
+  height: 200px;
+  margin: 10px 70px;
   border-radius: 8px;
-  background-color: var(--light-grey);
-  flex-wrap: wrap;
 
-  section {
-    width: 50%;
-    background-color: var(--dark-grey);
-    display: flex;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
-  @media (max-width: 800px) {
-    section {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-    }
+  background-color: red;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    margin: 10px 0;
   }
 `;

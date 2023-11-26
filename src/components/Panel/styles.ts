@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMain = styled.main`
-  margin: 0 105px;
+  margin: 0 70px;
   padding: 20px;
   border: 4px solid var(--light-grey);
   border-radius: 8px;
@@ -13,7 +13,6 @@ export const StyledMain = styled.main`
     display: flex;
     align-items: center;
     gap: 24px;
-    
 
     h3 {
       font-size: 20px;

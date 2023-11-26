@@ -1,36 +1,13 @@
 import styled from "styled-components";
 
-export const StyledItemConduct = styled.main`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+export const StyledItemConduct = styled.section`
+  header {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
 
   section {
     display: flex;
-    flex-direction: column;
-    span {
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      p {
-      }
-    }
-  }
-
-  article {
-    display: flex;
-    div {
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-      background-color: red;
-      img {
-        height: 50px;
-      }
-
-      p {
-      }
-    }
   }
 `;
