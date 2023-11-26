@@ -4,7 +4,6 @@ export const StyledItemConduct = styled.section`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 20px;
 `;
 
 export const StyledElementConduct = styled.div`
@@ -19,3 +18,4 @@ export const StyledElementConduct = styled.div`
     margin: 10px;
   }
 `;
+
