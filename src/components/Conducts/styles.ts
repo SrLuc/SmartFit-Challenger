@@ -6,7 +6,7 @@ export const StyledConductPanel = styled.section`
   background-color: var(--light-grey);
   padding: 10px;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1100px) {
     flex-direction: column;
     height: auto;
     background-color: transparent;
@@ -14,6 +14,7 @@ export const StyledConductPanel = styled.section`
     section {
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
 
     div {
