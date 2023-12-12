@@ -1,4 +1,6 @@
 import * as S from "./styles";
+import axios from "axios";
+
 import Options from "../UIelements/Option/Options";
 import iconHour from "../../assets/icon-hour.png";
 import ClosedGym from "../UIelements/ClosedGym/ClosedGym";
@@ -6,7 +8,23 @@ import SearchButton from "../UIelements/Buttons/SearchButton";
 import ClearButton from "../UIelements/Buttons/ClearButton";
 import Container from "../UIelements/ContainerFlex";
 
+import { useEffect } from "react";
+import { useContext } from "react";
+import { GymContext } from "../../contexts";
+
 const Panel = () => {
+
+  const {setGymsList} = useContext(GymContext);
+
+  useEffect(() => {
+    const url =
+      "https://test-frontend-developer.s3.amazonaws.com/data/locations.json";
+    axios.get(url).then((response) => {
+      const locations = response.data.locations;
+      setGymsList(locations);
+    });
+  }, []);
+
   return (
     <S.StyledMain>
       <section>

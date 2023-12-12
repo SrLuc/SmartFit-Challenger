@@ -1,13 +1,50 @@
 import * as S from "./styles";
 
-const Gym = ({}) => {
+export interface GymProps {
+  id?: number;
+  title?: string;
+  content: string;
+  open?: boolean;
+  mask?: MaskAvailability;
+  towel?: TowelAvailability;
+  fountain?: FountainAvailability;
+  lockerRoom?: LockerRoomAvailability;
+  schedules?: Schedule[];
+}
+
+interface Schedule {
+  weekdays: string;
+  hour: string;
+}
+
+enum MaskAvailability {
+  Required = "required",
+  Recommended = "recommended",
+}
+
+enum TowelAvailability {
+  Required = "required",
+  Recommended = "recommended",
+}
+
+enum FountainAvailability {
+  Partial = "partial",
+  NotAllowed = "not_allowed",
+}
+
+enum LockerRoomAvailability {
+  Partial = "partial",
+  Allowed = "allowed",
+  NotAllowed = "not_allowed",
+}
+
+const Gym = ({ id, title, content: contentAdress = "" }: GymProps) => {
   return (
-    <S.StyledGymItem>
+    <S.StyledGymItem key={id}>
       <div className="section1">
         <h2>Aberto/fechado</h2>
-        <h1>Nome da Academia</h1>
-        <p>Descrição do Endereço</p>
-        <p>Cidade/Estado</p>
+        <h1>{title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: contentAdress }} />
       </div>
       <hr />
       <div className="section2">
