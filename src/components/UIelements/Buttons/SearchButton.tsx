@@ -1,9 +1,11 @@
 import * as S from "./styles";
 
-interface SearchButtonProps {}
+interface SearchButtonProps {
+  onClick?: () => void;
+}
 
-const SearchButton = ({}: SearchButtonProps) => {
-  return <S.StyledSearchButton>Search Gyns</S.StyledSearchButton>;
+const SearchButton = ({onClick}: SearchButtonProps) => {
+  return <S.StyledSearchButton onClick={onClick}>Search Gyns</S.StyledSearchButton>;
 };
 
 export default SearchButton;

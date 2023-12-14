@@ -7,11 +7,11 @@ import Container from "../UIelements/ContainerFlex";
 import Gym from "./Gym";
 
 const Panel = () => {
-  const { gymsList } = useContext(GymContext);
+ const { gymsList } = useContext(GymContext);
 
   return (
     <Container>
-      <S.StyledGymPanel>
+      <S.StyledGymPanel >
         {gymsList.map(({ id, title, content }) => {
           return <Gym key={id} title={title} content={content} />;
         })}

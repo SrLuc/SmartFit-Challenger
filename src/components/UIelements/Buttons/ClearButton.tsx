@@ -1,11 +1,11 @@
 import * as S from "./styles";
 
-interface ClearButtonProps {}
+interface ClearButtonProps {
+  onClick?: () => void;
+}
 
-const ClearButton = ({}: ClearButtonProps) => {
-  return <S.StyledClearButton>
-    Clear
-  </S.StyledClearButton>;
+const ClearButton = ({ onClick }: ClearButtonProps) => {
+  return <S.StyledClearButton onClick={onClick}>Clear</S.StyledClearButton>;
 };
 
 export default ClearButton;

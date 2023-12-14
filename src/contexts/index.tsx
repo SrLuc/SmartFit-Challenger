@@ -22,6 +22,7 @@ interface GymActiveContextProps {
 export const GymContext = createContext<GymContextProps>({} as GymContextProps);
 
 export const GymProvider = ({ children }: GymContextProps) => {
+    
   const [gymsList, setGymsList] = useState<GymProps[]>([]);
 
   const [activeGymList, setActiveGymList] = useState<GymActiveContextProps>({

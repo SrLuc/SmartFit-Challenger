@@ -8,22 +8,24 @@ import SearchButton from "../UIelements/Buttons/SearchButton";
 import ClearButton from "../UIelements/Buttons/ClearButton";
 import Container from "../UIelements/ContainerFlex";
 
-import { useEffect } from "react";
 import { useContext } from "react";
 import { GymContext } from "../../contexts";
 
 const Panel = () => {
+  const { setGymsList, gymsList } = useContext(GymContext);
 
-  const {setGymsList} = useContext(GymContext);
-
-  useEffect(() => {
+  function getGyms() {
     const url =
       "https://test-frontend-developer.s3.amazonaws.com/data/locations.json";
     axios.get(url).then((response) => {
       const locations = response.data.locations;
       setGymsList(locations);
     });
-  }, []);
+  }
+
+  function clearGyms() {
+    setGymsList([]);
+  }
 
   return (
     <S.StyledMain>
@@ -37,10 +39,10 @@ const Panel = () => {
       <Options name="Morning" hour="06:00/12:00" />
       <Options name="Afternoon" hour="12:00/18:00" />
       <Options name="Night" hour="18:00/00:00" />
-      <ClosedGym check={false} />
+      <ClosedGym check={false} gymsNumber={gymsList.length} />
       <Container>
-        <SearchButton />
-        <ClearButton />
+        <SearchButton onClick={getGyms} />
+        <ClearButton onClick={clearGyms} />
       </Container>
     </S.StyledMain>
   );
