@@ -13,6 +13,7 @@ const App = () => {
         <Header />
         <Heading />
         <Panel />
+      
         <Gyms />
       </GymProvider>
     </>

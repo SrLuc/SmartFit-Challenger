@@ -5,10 +5,10 @@ export interface GymProps {
   title?: string;
   content: string;
   open?: boolean;
-  mask?: MaskAvailability;
-  towel?: TowelAvailability;
-  fountain?: FountainAvailability;
-  lockerRoom?: LockerRoomAvailability;
+  mask?: string | undefined;
+  towel?: string | undefined;
+  fountain?: string | undefined;
+  locker_room?: string | undefined;
   schedules?: Schedule[];
 }
 
@@ -17,41 +17,28 @@ interface Schedule {
   hour: string;
 }
 
-enum MaskAvailability {
-  Required = "required",
-  Recommended = "recommended",
-}
-
-enum TowelAvailability {
-  Required = "required",
-  Recommended = "recommended",
-}
-
-enum FountainAvailability {
-  Partial = "partial",
-  NotAllowed = "not_allowed",
-}
-
-enum LockerRoomAvailability {
-  Partial = "partial",
-  Allowed = "allowed",
-  NotAllowed = "not_allowed",
-}
-
-const Gym = ({ id, title, content: contentAdress = "" }: GymProps) => {
+const Gym = ({
+  id,
+  title,
+  content: contentAdress = "",
+  mask,
+  towel,
+  fountain,
+  locker_room,
+}: GymProps) => {
   return (
     <S.StyledGymItem key={id}>
       <div className="section1">
         <h2>Aberto/fechado</h2>
         <h1>{title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: contentAdress }} />
+        <p dangerouslySetInnerHTML={{ __html: contentAdress }}></p>
       </div>
       <hr />
       <div className="section2">
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
+        <img src={mask} alt="Mask" />
+        <img src={towel} alt="Towel" />
+        <img src={fountain} alt="Water Fountain" />
+        <img src={locker_room} alt="Locker Room" />
       </div>
       <div className="section3">
         <ul>

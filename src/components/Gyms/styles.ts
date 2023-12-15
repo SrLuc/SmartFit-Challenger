@@ -15,9 +15,9 @@ export const StyledGymPanel = styled.main`
 `;
 
 export const StyledGymItem = styled.div`
-  width: 32%;
+  width: 30%;
   height: 100%;
-  margin: 15px 0;
+  margin: 15px ;
   padding: 15px;
   border-radius: 10px;
   background-color: var(--light-grey);
@@ -39,23 +39,33 @@ export const StyledGymItem = styled.div`
     }
 
     p {
-      color: var(--dark-grey);
+      color: var(--median-grey);
       text-align: justify;
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
   }
 
   hr {
-    margin: 10px 0;
-    border: 1px solid var(--dark-grey);
+    border: 1px solid var(--median-grey);
   }
 
   .section2 {
-    height: 40%;
+    height: 45%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    img{
+      width: 135px;
+      height: 135px;
+      margin: 10px;
+    }
   }
 
   .section3 {
-    height: 15%;
+    height: 25%;
     ul {
       list-style: none;
       display: flex;
@@ -72,7 +82,7 @@ export const StyledGymItem = styled.div`
   }
 
   @media (max-width: 1000px) {
-    width: 75%;
+    width: 95%;
     height: 100%;
     margin: 15px 0;
   }
