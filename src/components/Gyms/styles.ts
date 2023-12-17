@@ -16,7 +16,7 @@ export const StyledGymPanel = styled.main`
 
 export const StyledGymItem = styled.div`
   width: 30%;
-  height: 750px;
+  height: 100%;
   margin: 15px;
   padding: 15px;
   border-radius: 10px;
@@ -35,13 +35,13 @@ export const StyledGymItem = styled.div`
 
     h1 {
       color: var(--dark-grey);
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
 
     p {
       color: var(--median-grey);
       text-align: justify;
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
   }
 
@@ -58,14 +58,14 @@ export const StyledGymItem = styled.div`
     align-items: center;
 
     img {
-      width: 135px;
-      height: 135px;
+      width: 100px;
+      height: 100px;
       margin: 10px;
     }
   }
 
   .section3 {
-    height: 25%;
+    height: 30%;
     ul {
       list-style: none;
       display: flex;
