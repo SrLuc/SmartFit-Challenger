@@ -2,6 +2,7 @@ import * as S from "./styles";
 
 export interface GymProps {
   id?: number;
+  opened?: boolean | undefined;
   title?: string;
   content: string;
   open?: boolean;
@@ -19,6 +20,7 @@ interface Schedule {
 
 const Gym = ({
   id,
+  opened,
   title,
   content: contentAdress = "",
   mask,
@@ -29,7 +31,9 @@ const Gym = ({
   return (
     <S.StyledGymItem key={id}>
       <div className="section1">
-        <h2>Aberto/fechado</h2>
+        <S.StyledGymStatus text={opened}>
+          {opened == true ? "Aberto" : "Fechado"}
+        </S.StyledGymStatus>
         <h1>{title}</h1>
         <p dangerouslySetInnerHTML={{ __html: contentAdress }}></p>
       </div>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledGymPanel = styled.main`
   width: 100%;
-  height: 800px;
+  height: 100%;
   margin: 0 70px;
   padding: 20px;
 
@@ -16,8 +16,8 @@ export const StyledGymPanel = styled.main`
 
 export const StyledGymItem = styled.div`
   width: 30%;
-  height: 100%;
-  margin: 15px ;
+  height: 750px;
+  margin: 15px;
   padding: 15px;
   border-radius: 10px;
   background-color: var(--light-grey);
@@ -57,7 +57,7 @@ export const StyledGymItem = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    img{
+    img {
       width: 135px;
       height: 135px;
       margin: 10px;
@@ -77,13 +77,17 @@ export const StyledGymItem = styled.div`
 
   @media (max-width: 1300px) {
     width: 45%;
-    height: 100%;
+    height: 10%;
     margin: 15px 0;
   }
 
   @media (max-width: 1000px) {
     width: 95%;
-    height: 100%;
+    height: 10%;
     margin: 15px 0;
   }
+`;
+
+export const StyledGymStatus = styled.h2<{ text: boolean | undefined }>`
+  color: ${(props) => (props.text == true ? "green" : "red")};
 `;

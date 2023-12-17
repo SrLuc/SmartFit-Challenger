@@ -32,9 +32,11 @@ const Panel = () => {
             towel,
             fountain,
             locker_room,
+            opened,
           }: GymProps) => {
             return (
               <Gym
+                opened={opened}
                 key={id}
                 title={title}
                 content={content}
