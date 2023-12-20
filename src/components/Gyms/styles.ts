@@ -92,25 +92,36 @@ export const StyledGymSchedule = styled.li`
   align-items: center;
   flex-direction: column;
   justify-content: space-evenly;
-
+  text-align: left;
   width: 120px;
   height: 100%;
-  text-align: left;
-
+  padding: 5px;
 
   h3 {
     color: var(--dark-grey);
     font-size: 1.3rem;
     text-align: center;
+
+    @media (max-width: 1000px) {
+      font-size: 1.5rem;
+    }
   }
 
   p {
     color: var(--median-grey);
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
+
+    @media (max-width: 1000px) {
+      font-size: 1.5rem;
+    }
   }
 
-  @media (max-width: 1100px) {
-    width: 75px;
+  @media (max-width: 1300px) {
+    width: 50%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 100%;
   }
 `;
