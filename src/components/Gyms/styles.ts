@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const StyledGymPanel = styled.main`
   width: 100%;
   height: 100%;
-  margin: 0 70px;
-  padding: 20px;
+  margin: 0 40px;
+  padding: 10px;
 
   display: flex;
   justify-content: space-evenly;
@@ -95,7 +95,6 @@ export const StyledGymSchedule = styled.li`
   text-align: left;
   width: 120px;
   height: 100%;
-  padding: 5px;
 
   h3 {
     color: var(--dark-grey);
