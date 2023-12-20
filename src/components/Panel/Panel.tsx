@@ -12,7 +12,7 @@ import { useContext } from "react";
 import { GymContext } from "../../contexts";
 
 const Panel = () => {
-  const { setGymsList, gymsList } = useContext(GymContext);
+  const { gymsList, setGymsList } = useContext(GymContext);
 
   function getGyms() {
     const url =
@@ -26,6 +26,8 @@ const Panel = () => {
   function clearGyms() {
     setGymsList([]);
   }
+
+  
 
   return (
     <S.StyledMain>

@@ -9,14 +9,11 @@ export const StyledGymPanel = styled.main`
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-
-  @media (max-width: 1100px) {
-  }
 `;
 
 export const StyledGymItem = styled.div`
   width: 30%;
-  height: 100%;
+  height: 550px;
   margin: 15px;
   padding: 15px;
   border-radius: 10px;
@@ -60,7 +57,7 @@ export const StyledGymItem = styled.div`
     img {
       width: 100px;
       height: 100px;
-      margin: 10px;
+      margin: 5px;
     }
   }
 
@@ -77,17 +74,43 @@ export const StyledGymItem = styled.div`
 
   @media (max-width: 1300px) {
     width: 45%;
-    height: 10%;
     margin: 15px 0;
   }
 
   @media (max-width: 1000px) {
     width: 95%;
-    height: 10%;
     margin: 15px 0;
   }
 `;
 
 export const StyledGymStatus = styled.h2<{ text: boolean | undefined }>`
   color: ${(props) => (props.text == true ? "green" : "red")};
+`;
+
+export const StyledGymSchedule = styled.li`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  width: 120px;
+  height: 100%;
+  text-align: left;
+
+
+  h3 {
+    color: var(--dark-grey);
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  p {
+    color: var(--median-grey);
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  @media (max-width: 1100px) {
+    width: 75px;
+  }
 `;

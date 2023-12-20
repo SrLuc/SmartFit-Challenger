@@ -10,7 +10,7 @@ export interface GymProps {
   towel?: string | undefined;
   fountain?: string | undefined;
   locker_room?: string | undefined;
-  schedules?: Schedule[];
+  schedules?: Schedule[] | undefined;
 }
 
 interface Schedule {
@@ -27,6 +27,7 @@ const Gym = ({
   towel,
   fountain,
   locker_room,
+  schedules,
 }: GymProps) => {
   return (
     <S.StyledGymItem key={id}>
@@ -46,18 +47,14 @@ const Gym = ({
       </div>
       <div className="section3">
         <ul>
-          <li>
-            <h3>Dia</h3>
-            <p>Horário</p>
-          </li>
-          <li>
-            <h3>Dia</h3>
-            <p>Horário</p>
-          </li>
-          <li>
-            <h3>Dia</h3>
-            <p>Horário</p>
-          </li>
+          {schedules?.map(({ weekdays, hour }) => {
+            return (
+              <S.StyledGymSchedule>
+                <h3>{weekdays}</h3>
+                <p>{hour}</p>
+              </S.StyledGymSchedule>
+            );
+          })}
         </ul>
       </div>
     </S.StyledGymItem>

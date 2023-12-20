@@ -33,27 +33,31 @@ const Panel = () => {
             fountain,
             locker_room,
             opened,
+            schedules,
           }: GymProps) => {
-            return (
-              <Gym
-                opened={opened}
-                key={id}
-                title={title}
-                content={content}
-                mask={mask == "required" ? requiredMask : recommendedMask}
-                towel={towel == "required" ? requiredTowel : recommendedTowel}
-                fountain={
-                  fountain == "partial" ? partialFountain : forbiddenFountain
-                }
-                locker_room={
-                  locker_room == "allowed"
-                    ? requiredLockerRoom
-                    : locker_room == "partial"
-                    ? partialLockerRoom
-                    : forbiddenLockerRoom
-                }
-              />
-            );
+            if (opened == true) {
+              return (
+                <Gym
+                  schedules={schedules}
+                  opened={opened}
+                  key={id}
+                  title={title}
+                  content={content}
+                  mask={mask == "required" ? requiredMask : recommendedMask}
+                  towel={towel == "required" ? requiredTowel : recommendedTowel}
+                  fountain={
+                    fountain == "partial" ? partialFountain : forbiddenFountain
+                  }
+                  locker_room={
+                    locker_room == "allowed"
+                      ? requiredLockerRoom
+                      : locker_room == "partial"
+                      ? partialLockerRoom
+                      : forbiddenLockerRoom
+                  }
+                />
+              );
+            }
           }
         )}
       </S.StyledGymPanel>
