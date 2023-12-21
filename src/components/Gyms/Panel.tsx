@@ -18,7 +18,7 @@ import Container from "../UIelements/ContainerFlex";
 import Gym from "./Gym";
 
 const Panel = () => {
-  const { gymsList } = useContext(GymContext);
+  const { gymsList, gymChecks } = useContext(GymContext);
 
   return (
     <Container>
@@ -36,6 +36,29 @@ const Panel = () => {
             schedules,
           }: GymProps) => {
             if (opened == true) {
+              return (
+                <Gym
+                  key={id}
+                  schedules={schedules}
+                  opened={opened}
+                  title={title}
+                  content={content}
+                  mask={mask == "required" ? requiredMask : recommendedMask}
+                  towel={towel == "required" ? requiredTowel : recommendedTowel}
+                  fountain={
+                    fountain == "partial" ? partialFountain : forbiddenFountain
+                  }
+                  locker_room={
+                    locker_room == "allowed"
+                      ? requiredLockerRoom
+                      : locker_room == "partial"
+                      ? partialLockerRoom
+                      : forbiddenLockerRoom
+                  }
+                />
+              );
+            }
+            if(gymChecks.status == true){
               return (
                 <Gym
                   key={id}

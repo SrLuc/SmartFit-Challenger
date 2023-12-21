@@ -13,6 +13,12 @@ export const Section = styled.section`
     gap: 10px;
     font-weight: bold;
 
+    input{
+      width: 25px;
+      height: 25px;
+    }
+
+
     p {
       font-weight: bold;
       color: var(--dark-grey);
