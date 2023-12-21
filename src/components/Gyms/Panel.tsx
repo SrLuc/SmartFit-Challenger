@@ -38,9 +38,9 @@ const Panel = () => {
             if (opened == true) {
               return (
                 <Gym
+                  key={id}
                   schedules={schedules}
                   opened={opened}
-                  key={id}
                   title={title}
                   content={content}
                   mask={mask == "required" ? requiredMask : recommendedMask}

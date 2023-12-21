@@ -13,6 +13,7 @@ import { GymContext } from "../../contexts";
 
 const Panel = () => {
   const { gymsList, setGymsList } = useContext(GymContext);
+  const { gymChecks, setGymCheck } = useContext(GymContext);
 
   function getGyms() {
     const url =
@@ -27,7 +28,14 @@ const Panel = () => {
     setGymsList([]);
   }
 
-  
+  const toggleStatusCheck = () => {
+    if (gymChecks) {
+      setGymCheck({
+        ...gymChecks,
+        status: !gymChecks.status,
+      });
+    }
+  };
 
   return (
     <S.StyledMain>
@@ -41,7 +49,11 @@ const Panel = () => {
       <Options name="Morning" hour="06:00/12:00" />
       <Options name="Afternoon" hour="12:00/18:00" />
       <Options name="Night" hour="18:00/00:00" />
-      <ClosedGym check={false} gymsNumber={gymsList.length} />
+      <ClosedGym
+        gymAmount={gymsList.length}
+        check={gymChecks?.status}
+        onChange={toggleStatusCheck}
+      />
       <Container>
         <SearchButton onClick={getGyms} />
         <ClearButton onClick={clearGyms} />

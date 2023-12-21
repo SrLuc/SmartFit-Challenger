@@ -6,30 +6,27 @@ interface GymContextProps {
   setGymsList: React.Dispatch<React.SetStateAction<GymProps[]>>;
   children?: React.ReactNode;
 
-  activeGymList?: GymActiveContextProps;
-  setActiveGymList?: React.Dispatch<
-    React.SetStateAction<GymActiveContextProps>
-  > | undefined;
+  gymChecks: GymContextCheckProps;
+  setGymCheck: React.Dispatch<React.SetStateAction<GymContextCheckProps>>;
 }
 
-interface GymActiveContextProps {
+interface GymContextCheckProps {
   morgning: boolean;
   afternoon: boolean;
   night: boolean;
-  closed: boolean;
+  status: boolean;
 }
 
 export const GymContext = createContext<GymContextProps>({} as GymContextProps);
 
 export const GymProvider = ({ children }: GymContextProps) => {
-    
   const [gymsList, setGymsList] = useState<GymProps[]>([]);
 
-  const [activeGymList, setActiveGymList] = useState<GymActiveContextProps>({
+  const [gymChecks, setGymCheck] = useState({
     morgning: false,
     afternoon: false,
     night: false,
-    closed: false,
+    status: false,
   });
 
   return (
@@ -37,8 +34,8 @@ export const GymProvider = ({ children }: GymContextProps) => {
       value={{
         gymsList,
         setGymsList,
-        activeGymList,
-        setActiveGymList,
+        gymChecks,
+        setGymCheck,
       }}
     >
       {children}
