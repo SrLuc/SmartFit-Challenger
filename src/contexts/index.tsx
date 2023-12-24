@@ -8,12 +8,17 @@ interface GymContextProps {
 
   gymChecks: GymContextCheckProps;
   setGymCheck: React.Dispatch<React.SetStateAction<GymContextCheckProps>>;
+
+  gymHours: { startHour: string; endHour: string };
+  setGymHours: React.Dispatch<
+    React.SetStateAction<{ startHour: string; endHour: string }>
+  >;
 }
 
 interface GymContextCheckProps {
-  morgning: boolean;
-  afternoon: boolean;
-  night: boolean;
+  morning: string;
+  afternoon: string;
+  night: string;
   status: boolean;
 }
 
@@ -23,10 +28,18 @@ export const GymProvider = ({ children }: GymContextProps) => {
   const [gymsList, setGymsList] = useState<GymProps[]>([]);
 
   const [gymChecks, setGymCheck] = useState({
-    morgning: false,
-    afternoon: false,
-    night: false,
+    morning: "",
+    afternoon: "",
+    night: "",
     status: false,
+  });
+
+  const [gymHours, setGymHours] = useState<{
+    startHour: string;
+    endHour: string;
+  }>({
+    startHour: "",
+    endHour: "",
   });
 
   return (
@@ -36,6 +49,8 @@ export const GymProvider = ({ children }: GymContextProps) => {
         setGymsList,
         gymChecks,
         setGymCheck,
+        gymHours,
+        setGymHours,
       }}
     >
       {children}

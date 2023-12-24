@@ -20,6 +20,8 @@ import Gym from "./Gym";
 const Panel = () => {
   const { gymsList, gymChecks } = useContext(GymContext);
 
+  const { gymHours } = useContext(GymContext);
+
   return (
     <Container>
       <S.StyledGymPanel>
@@ -58,7 +60,34 @@ const Panel = () => {
                 />
               );
             }
-            if(gymChecks.status == true){
+            if (gymChecks.status == true) {
+              return (
+                <Gym
+                  key={id}
+                  schedules={schedules}
+                  opened={opened}
+                  title={title}
+                  content={content}
+                  mask={mask == "required" ? requiredMask : recommendedMask}
+                  towel={towel == "required" ? requiredTowel : recommendedTowel}
+                  fountain={
+                    fountain == "partial" ? partialFountain : forbiddenFountain
+                  }
+                  locker_room={
+                    locker_room == "allowed"
+                      ? requiredLockerRoom
+                      : locker_room == "partial"
+                      ? partialLockerRoom
+                      : forbiddenLockerRoom
+                  }
+                />
+              );
+            }
+            if (
+              gymChecks.morning == true &&
+              gymHours.startHour >= 6 &&
+              gymHours.startHour <= 12
+            ) {
               return (
                 <Gym
                   key={id}
