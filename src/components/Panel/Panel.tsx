@@ -12,8 +12,8 @@ import { useContext } from "react";
 import { GymContext } from "../../contexts";
 
 const Panel = () => {
-  const { gymsList, setGymsList } = useContext(GymContext);
-  const { gymChecks, setGymCheck } = useContext(GymContext);
+  const { gymsList, setGymsList, gymChecks, setGymCheck } =
+    useContext(GymContext);
 
   const getGyms = () => {
     const url =
@@ -21,8 +21,6 @@ const Panel = () => {
     axios.get(url).then((response) => {
       const locations = response.data.locations;
       setGymsList(locations);
-
-       
     });
   };
 
@@ -37,12 +35,12 @@ const Panel = () => {
     });
   };
 
-  const weekdays = {
-    toggleMorningCheck: function () {},
-
-    toggleAfternoonCheck: function () {},
-
-    toggleNightCheck: function () {},
+  const toggleMorningCheck = () => {
+    setGymCheck({
+      ...gymChecks,
+      morning: !gymChecks.morning,
+    });
+    console.log(gymChecks);
   };
 
   return (
@@ -56,24 +54,12 @@ const Panel = () => {
       <p>What time do you want to train?</p>
       <Options
         name="Morning"
-        hour="06:00/12:00"
-        onChange={weekdays.toggleMorningCheck}
+        hours="06:00/12:00"
+        onChange={toggleMorningCheck}
       />
-      <Options
-        name="Afternoon"
-        hour="12:00/18:00"
-        onChange={weekdays.toggleAfternoonCheck}
-      />
-      <Options
-        name="Night"
-        hour="18:00/00:00"
-        onChange={weekdays.toggleNightCheck}
-      />
-      <ClosedGym
-        gymAmount={gymsList.length}
-        check={gymChecks?.status}
-        onChange={toggleStatusCheck}
-      />
+      <Options name="Afternoon" hours="12:00/18:00" />
+      <Options name="Night" hours="18:00/00:00" />
+      <ClosedGym gymAmount={gymsList.length} onChange={toggleStatusCheck} />
       <Container>
         <SearchButton onClick={getGyms} />
         <ClearButton onClick={clearGyms} />
