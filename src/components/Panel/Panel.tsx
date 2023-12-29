@@ -8,7 +8,7 @@ import SearchButton from "../UIelements/Buttons/SearchButton";
 import ClearButton from "../UIelements/Buttons/ClearButton";
 import Container from "../UIelements/ContainerFlex";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect } from "react";
 import { GymContext } from "../../contexts";
 
 const Panel = () => {
@@ -22,21 +22,25 @@ const Panel = () => {
     afternoonCheckBox,
     setAfternoonCheckBox,
     nightCheckBox,
-    setNightCheckBox
+    setNightCheckBox,
   } = useContext(GymContext);
 
-  const getGyms = () => {
-    const url =
-      "https://test-frontend-developer.s3.amazonaws.com/data/locations.json";
-    axios.get(url).then((response) => {
-      const locations = response.data.locations;
-      setGymsList(locations);
+  const getGyms = async () => {
+    try {
+      const url =
+        "https://test-frontend-developer.s3.amazonaws.com/data/locations.json";
 
-      for (const { schedules } of gymsList) {
+      const response = await axios.get(url);
+      const locations = response.data.locations;
+
+      const filteredGyms = locations.filter(({ schedules }: any) => {
         if (schedules) {
           for (const { hour, weekdays } of schedules) {
-            if (hour === "Fechada") {
+            if (hour === "Fechada" && !gymChecks.status) {
+              continue;
+            } else if (hour === "Fechada") {
               console.log("Fechada nos dias: " + weekdays);
+              return true;
             } else {
               const scheduleTimeString = hour;
               const cleanedSchedule = scheduleTimeString.replace(/\D/g, "");
@@ -46,19 +50,28 @@ const Panel = () => {
               console.log(`${initialHour} - ${finalHour}`);
 
               if (
-                (morningCheckBox && initialHour >= 6 && finalHour < 12) ||
-                (afternoonCheckBox && initialHour >= 11 && finalHour < 19) ||
-                (nightCheckBox && initialHour >= 18 && finalHour < 24)
+                (!morningCheckBox ||
+                  (morningCheckBox && initialHour >= 6 && finalHour < 12)) &&
+                (!afternoonCheckBox ||
+                  (afternoonCheckBox && initialHour >= 11 && finalHour < 19)) &&
+                (!nightCheckBox ||
+                  (nightCheckBox && initialHour >= 18 && finalHour < 24))
               ) {
+                return true;
               }
             }
           }
         }
-      }
+        return false;
+      });
 
-      return false;
-    });
+      setGymsList(filteredGyms);
+    } catch (error) {
+      console.error("Error fetching gyms", error);
+    }
   };
+
+  useEffect(() => {}, [morningCheckBox, afternoonCheckBox, nightCheckBox]);
 
   const clearGyms = () => {
     setGymsList([]);

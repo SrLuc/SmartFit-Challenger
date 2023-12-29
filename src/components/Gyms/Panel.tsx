@@ -18,8 +18,13 @@ import Container from "../UIelements/ContainerFlex";
 import Gym from "./Gym";
 
 const Panel = () => {
-  const { gymsList, gymChecks } = useContext(GymContext);
-
+  const {
+    gymsList,
+    gymChecks,
+    morningCheckBox,
+    afternoonCheckBox,
+    nightCheckBox,
+  } = useContext(GymContext);
 
   return (
     <Container>
