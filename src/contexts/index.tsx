@@ -8,6 +8,13 @@ interface GymContextProps {
 
   gymChecks: GymContextCheckProps;
   setGymCheck: React.Dispatch<React.SetStateAction<GymContextCheckProps>>;
+
+  morningCheckBox: boolean;
+  setMorningCheckBox: React.Dispatch<React.SetStateAction<boolean>>;
+  afternoonCheckBox: boolean;
+  setAfternoonCheckBox: React.Dispatch<React.SetStateAction<boolean>>;
+  nightCheckBox: boolean;
+  setNightCheckBox: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface GymContextCheckProps {
@@ -23,6 +30,10 @@ export const GymProvider = ({ children }: GymContextProps) => {
     status: false,
   });
 
+  const [morningCheckBox, setMorningCheckBox] = useState(false);
+  const [afternoonCheckBox, setAfternoonCheckBox] = useState(false);
+  const [nightCheckBox, setNightCheckBox] = useState(false);
+
   return (
     <GymContext.Provider
       value={{
@@ -30,6 +41,12 @@ export const GymProvider = ({ children }: GymContextProps) => {
         setGymsList,
         gymChecks,
         setGymCheck,
+        morningCheckBox,
+        setMorningCheckBox,
+        afternoonCheckBox,
+        setAfternoonCheckBox,
+        nightCheckBox,
+        setNightCheckBox,
       }}
     >
       {children}

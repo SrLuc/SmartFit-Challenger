@@ -1,4 +1,3 @@
-import { useEffect, useState, useContext } from "react";
 import * as S from "./styles";
 
 interface OptionsProps {
