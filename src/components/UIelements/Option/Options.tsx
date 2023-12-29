@@ -1,17 +1,20 @@
+import { useEffect, useState, useContext } from "react";
 import * as S from "./styles";
 
 interface OptionsProps {
   name: string;
   hours: string;
   check?: boolean;
-  onChange?: () => void;
+  filterGymHours?: () => void;
 }
 
-const Options = ({ name, hours, check, onChange }: OptionsProps) => {
+const Options = ({ name, hours, check, filterGymHours }: OptionsProps) => {
+
+
   return (
     <S.Nav>
       <span>
-        <input type="checkbox" checked={check} onInput={onChange} />
+        <input type="checkbox" checked={check} onChange={filterGymHours} />
         <label htmlFor="">{name}</label>
       </span>
       <span>{hours}</span>
