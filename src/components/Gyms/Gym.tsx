@@ -13,7 +13,8 @@ export interface GymProps {
   schedules?: Schedule[] | undefined;
 }
 
-interface Schedule {
+
+export interface Schedule {
   weekdays: string;
   hour: string;
 }

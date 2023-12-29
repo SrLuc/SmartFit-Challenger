@@ -8,12 +8,19 @@ import SearchButton from "../UIelements/Buttons/SearchButton";
 import ClearButton from "../UIelements/Buttons/ClearButton";
 import Container from "../UIelements/ContainerFlex";
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GymContext } from "../../contexts";
+
 
 const Panel = () => {
   const { gymsList, setGymsList, gymChecks, setGymCheck } =
     useContext(GymContext);
+
+  const [gymTime, setGymTime] = useState({
+    morning: false,
+    afternoon: false,
+    night: false,
+  });
 
   const getGyms = () => {
     const url =
@@ -35,13 +42,11 @@ const Panel = () => {
     });
   };
 
-  const toggleMorningCheck = () => {
-    setGymCheck({
-      ...gymChecks,
-      morning: !gymChecks.morning,
-    });
-    console.log(gymChecks);
-  };
+ 
+
+  useEffect(() => {
+    console.log(gymTime);
+  }, [gymTime]);
 
   return (
     <S.StyledMain>
@@ -55,10 +60,15 @@ const Panel = () => {
       <Options
         name="Morning"
         hours="06:00/12:00"
-        onChange={toggleMorningCheck}
       />
-      <Options name="Afternoon" hours="12:00/18:00" />
-      <Options name="Night" hours="18:00/00:00" />
+      <Options
+        name="Afternoon"
+        hours="12:00/18:00"
+      />
+      <Options
+        name="Night"
+        hours="18:00/00:00"
+      />
       <ClosedGym gymAmount={gymsList.length} onChange={toggleStatusCheck} />
       <Container>
         <SearchButton onClick={getGyms} />
