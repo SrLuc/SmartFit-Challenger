@@ -9,7 +9,18 @@ import { GymProvider } from "./contexts";
 const App = () => {
   return (
     <>
-      <GymProvider>
+      <GymProvider
+        gymsList={[]}
+        setGymsList={() => null}
+        gymChecks={false}
+        setGymCheck={() => null}
+        morningCheckBox={false}
+        setMorningCheckBox={() => null}
+        afternoonCheckBox={false}
+        setAfternoonCheckBox={() => null}
+        nightCheckBox={false}
+        setNightCheckBox={() => null}
+      >
         <Header />
         <Heading />
         <Panel />

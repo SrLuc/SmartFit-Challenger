@@ -6,8 +6,8 @@ interface GymContextProps {
   setGymsList: React.Dispatch<React.SetStateAction<GymProps[]>>;
   children?: React.ReactNode;
 
-  gymChecks: GymContextCheckProps;
-  setGymCheck: React.Dispatch<React.SetStateAction<GymContextCheckProps>>;
+  gymChecks: boolean;
+  setGymCheck: React.Dispatch<React.SetStateAction<boolean>>;
 
   morningCheckBox: boolean;
   setMorningCheckBox: React.Dispatch<React.SetStateAction<boolean>>;
@@ -23,7 +23,7 @@ interface GymContextCheckProps {
   status: boolean;
 }
 
-export const GymContext = createContext<GymContextProps>({} as GymContextProps);
+export const GymContext = createContext({});
 
 export const GymProvider = ({ children }: GymContextProps) => {
   const [gymsList, setGymsList] = useState<GymProps[]>([]);
