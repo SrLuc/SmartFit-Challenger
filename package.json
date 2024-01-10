@@ -13,6 +13,7 @@
     "@types/styled-components": "^5.1.30",
     "axios": "^1.6.2",
     "html-react-parser": "^5.0.7",
+    "pnpm": "^8.14.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.1"
