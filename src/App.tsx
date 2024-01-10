@@ -9,11 +9,11 @@ import { GymProvider } from "./contexts";
 const App = () => {
   return (
     <>
-      <GymProvider gymsList={[]} setGymsList={() => null}>
+      <GymProvider>
         <Header />
         <Heading />
         <Panel />
-        
+        <Conducts />
         <Gyms />
       </GymProvider>
     </>

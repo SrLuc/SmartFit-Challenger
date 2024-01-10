@@ -11,8 +11,10 @@ interface GymContextProps {
 
   morningCheckBox: boolean;
   setMorningCheckBox: React.Dispatch<React.SetStateAction<boolean>>;
+
   afternoonCheckBox: boolean;
   setAfternoonCheckBox: React.Dispatch<React.SetStateAction<boolean>>;
+  
   nightCheckBox: boolean;
   setNightCheckBox: React.Dispatch<React.SetStateAction<boolean>>;
 }

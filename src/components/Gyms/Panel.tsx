@@ -20,10 +20,7 @@ import Gym from "./Gym";
 const Panel = () => {
   const {
     gymsList,
-    gymChecks,
-    morningCheckBox,
-    afternoonCheckBox,
-    nightCheckBox,
+    gymChecks
   } = useContext(GymContext);
 
   return (
