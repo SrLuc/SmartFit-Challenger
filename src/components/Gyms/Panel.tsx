@@ -61,7 +61,7 @@ const Panel = () => {
                 />
               );
             }
-            if (gymChecks.status == true) {
+            if (gymChecks == true) {
               return (
                 <Gym
                   key={id}

@@ -36,7 +36,7 @@ const Panel = () => {
       const filteredGyms = locations.filter(({ schedules }: any) => {
         if (schedules) {
           for (const { hour, weekdays } of schedules) {
-            if (hour === "Fechada" && !gymChecks.status) {
+            if (hour === "Fechada" && !gymChecks) {
               continue;
             } else if (hour === "Fechada") {
               console.log("Fechada nos dias: " + weekdays);
@@ -78,10 +78,7 @@ const Panel = () => {
   };
 
   const toggleStatusCheck = () => {
-    setGymCheck({
-      ...gymChecks,
-      status: !gymChecks.status,
-    });
+    setGymCheck(!gymChecks);
   };
 
   return (
