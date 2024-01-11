@@ -11,10 +11,13 @@ const ClosedGym = ({ check, gymAmount, onChange }: ClosedGymProps) => {
     <S.Section>
       <div>
         <input type="checkbox" checked={check} onChange={onChange} />
-        <label htmlFor="">View Closed Units</label>
+        <label htmlFor="">Exibir Unidades Fechadas</label>
       </div>
       <div>
-        <p>Results Found:{gymAmount}</p>
+        <p>
+          Resultados Encontrados:
+          <span>{gymAmount}</span>
+        </p>
       </div>
     </S.Section>
   );

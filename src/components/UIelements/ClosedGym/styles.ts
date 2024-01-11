@@ -5,23 +5,44 @@ export const Section = styled.section`
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  
-  
+
   div {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
     font-weight: bold;
 
-    input{
-      width: 25px;
-      height: 25px;
+    label {
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--dark-grey);
     }
 
+    input {
+      width: 35px;
+      height: 35px;
+    }
 
     p {
-      font-weight: bold;
+      font-size: 22px;
       color: var(--dark-grey);
+
+      span {
+        font-weight: bold;
+        margin: 6px;
+      }
+    }
+
+    @media screen {
+      @media (max-width: 768px) {
+        label {
+          font-size: 20px;
+        }
+        input {
+          width: 50px;
+          height: 50px;
+        }
+      }
     }
   }
 `;

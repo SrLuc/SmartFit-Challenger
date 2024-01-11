@@ -5,7 +5,7 @@ interface ClearButtonProps {
 }
 
 const ClearButton = ({ onClick }: ClearButtonProps) => {
-  return <S.StyledClearButton onClick={onClick}>Clear</S.StyledClearButton>;
+  return <S.StyledClearButton onClick={onClick}>LIMPAR</S.StyledClearButton>;
 };
 
 export default ClearButton;

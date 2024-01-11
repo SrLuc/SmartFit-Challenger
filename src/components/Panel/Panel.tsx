@@ -87,32 +87,32 @@ const Panel = () => {
         <i>
           <img src={iconHour} alt="Cronogram" />
         </i>
-        <h3>Time</h3>
+        <h3>Horário</h3>
       </section>
-      <p>What time do you want to train?</p>
+      <p>Qual período quer treinar?</p>
       <Options
-        name="Morning"
+        name="Manhã"
         hours="06:00/12:00"
         check={morningCheckBox}
         filterGymHours={() => setMorningCheckBox(!morningCheckBox)}
       />
       <Options
-        name="Afternoon"
+        name="Tarde"
         hours="12:00/18:00"
         check={afternoonCheckBox}
         filterGymHours={() => setAfternoonCheckBox(!afternoonCheckBox)}
       />
       <Options
-        name="Night"
+        name="Noite"
         hours="18:00/00:00"
         check={nightCheckBox}
         filterGymHours={() => setNightCheckBox(!nightCheckBox)}
       />
       <ClosedGym gymAmount={gymsList.length} onChange={toggleStatusCheck} />
-      <Container>
+      <div>
         <SearchButton onClick={getGyms} />
         <ClearButton onClick={clearGyms} />
-      </Container>
+      </div>
     </S.StyledMain>
   );
 };

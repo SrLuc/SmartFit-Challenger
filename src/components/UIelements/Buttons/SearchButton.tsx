@@ -5,7 +5,7 @@ interface SearchButtonProps {
 }
 
 const SearchButton = ({onClick}: SearchButtonProps) => {
-  return <S.StyledSearchButton onClick={onClick}>Search Gyns</S.StyledSearchButton>;
+  return <S.StyledSearchButton onClick={onClick}>ENCONTRAR UNIDADE</S.StyledSearchButton>;
 };
 
 export default SearchButton;
