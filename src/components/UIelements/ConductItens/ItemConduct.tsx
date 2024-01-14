@@ -8,8 +8,8 @@ interface ItemConductProps {
 export const ItemConduct = ({ image, title }: ItemConductProps) => {
   return (
     <S.StyledItemConduct>
-      <img src={image} alt="" />
-      <span>{title}</span>
+      <img src={image}/>
+      <p>{title}</p>
     </S.StyledItemConduct>
   );
 };

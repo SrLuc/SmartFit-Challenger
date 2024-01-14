@@ -6,35 +6,55 @@ export const StyledBoxConduct = styled.section`
   flex-direction: column;
 
   @media screen {
-    @media (max-width: 1550px) {
-      width: 75%;
+    @media (max-width: 1500px) {
+      width: 85%;
     }
   }
 
   div {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
+
+    @media screen {
+      @media (max-width: 1224px) {
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        border-radius: 10px;
+        padding: 30px;
+      }
+    }
   }
 
   span {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 15px;
+    color: var(--dark-grey);
   }
 `;
 
 export const StyledItemConduct = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   img {
     width: 105px;
 
     @media screen {
       @media (max-width: 1224px) {
-        width: 100%;
+        width: 90%;
+        margin: 0 10px;
       }
     }
   }
-`;
 
-export const EspecialStyledBoxConduct = styled.section``;
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+`;
