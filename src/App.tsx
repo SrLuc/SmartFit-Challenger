@@ -2,6 +2,7 @@ import Header from "./components/Header/Header";
 import Heading from "./components/Heading/Heading";
 import Panel from "./components/Panel/Panel";
 import Conducts from "./components/Conducts/ConductPanel";
+import Footer from "./components/Footer/Footer";
 
 import Gyms from "./components/Gyms/Panel";
 import { GymProvider } from "./contexts";
@@ -26,6 +27,7 @@ const App = () => {
         <Panel />
         <Conducts />
         <Gyms />
+        <Footer />
       </GymProvider>
     </>
   );
