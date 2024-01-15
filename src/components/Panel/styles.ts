@@ -14,7 +14,7 @@ export const StyledMain = styled.main`
     align-items: center;
     gap: 10px;
 
-    img{
+    img {
       width: 40px;
     }
 
@@ -32,12 +32,17 @@ export const StyledMain = styled.main`
     margin: 20px;
   }
 
-  div{
+  div {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
-  };
+
+    @media (max-width: 1000px) {
+      display: flex;
+      gap: 15px;
+    }
+  }
 
   @media (max-width: 1000px) {
     margin: 10px;

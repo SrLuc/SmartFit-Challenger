@@ -44,8 +44,7 @@ export const Section = styled.section`
           height: 40px;
         }
         p {
-          font-size: 13px;
-          color: red;
+          font-size: 15px;
         }
       }
     }

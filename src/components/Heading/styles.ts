@@ -4,6 +4,11 @@ export const StyledHeading = styled.div`
   padding: 30px 0;
   margin: 0 20px;
 
+  @media (max-width: 1000px) {
+    margin: 10px;
+    padding: 5px;
+  }
+
   h1 {
     font-size: 3rem;
     margin-bottom: 1rem;

@@ -19,7 +19,7 @@ export const StyledSearchButton = styled.button`
   @media screen {
     @media (max-width: 768px) {
       width: 70%;
-      font-size: 15px;
+      font-size: 13px;
       padding: 20px;
     }
   }
@@ -45,7 +45,7 @@ export const StyledClearButton = styled.button`
   @media screen {
     @media (max-width: 768px) {
       width: 30%;
-      font-size: 15px;
+      font-size: 13px;
       padding: 20px;
     }
   }
