@@ -4,7 +4,7 @@ export const StyledGymPanel = styled.main`
   width: 100%;
   height: 100%;
   margin: 0 40px;
-  padding: 10px;
+  
 
   display: flex;
   justify-content: space-evenly;
@@ -16,7 +16,7 @@ export const StyledGymPanel = styled.main`
 `;
 
 export const StyledGymItem = styled.div`
-  width: 30%;
+  width: 20%;
   height: 550px;
   margin: 15px;
   padding: 15px;
@@ -96,8 +96,8 @@ export const StyledGymItem = styled.div`
     }
   }
 
-  @media (max-width: 1300px) {
-    width: 45%;
+  @media (max-width: 1200px) {
+    width: 40%;
     margin: 15px 0;
   }
 
