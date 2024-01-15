@@ -26,16 +26,14 @@ const Panel = () => {
     try {
       const url =
         "https://test-frontend-developer.s3.amazonaws.com/data/locations.json";
-  
+
       const response = await axios.get(url);
       const locations = response.data.locations;
-  
+
       const filteredGyms = locations.filter(({ opened, schedules }: any) => {
         if (gymChecks) {
-          // Mostrar academias fechadas
           return !opened;
         } else {
-          // Filtro padrão
           if (opened && schedules) {
             for (const { hour } of schedules) {
               if (hour === "Fechada") {
@@ -43,18 +41,18 @@ const Panel = () => {
               } else {
                 const scheduleTimeString = hour;
                 const cleanedSchedule = scheduleTimeString.replace(/\D/g, "");
-                const initialHour = parseInt(cleanedSchedule.substring(0, 2), 10);
+                const initialHour = parseInt(
+                  cleanedSchedule.substring(0, 2),
+                  10
+                );
                 const finalHour = parseInt(cleanedSchedule.substring(2, 4), 10);
-  
-                console.log(`${initialHour} - ${finalHour}`);
-  
                 if (
                   (!morningCheckBox ||
-                    (morningCheckBox && initialHour >= 0 && finalHour <= 12)) &&
+                    (morningCheckBox && initialHour >= 5 && finalHour <= 12)) &&
                   (!afternoonCheckBox ||
                     (afternoonCheckBox &&
                       initialHour >= 12 &&
-                      finalHour <= 18)) &&
+                      finalHour <= 20)) &&
                   (!nightCheckBox ||
                     (nightCheckBox && initialHour >= 18 && finalHour <= 24))
                 ) {
@@ -66,13 +64,12 @@ const Panel = () => {
           return false;
         }
       });
-  
+
       setGymsList(filteredGyms);
     } catch (error) {
       console.error("Error fetching gyms", error);
     }
   };
-  
 
   useEffect(() => {}, [morningCheckBox, afternoonCheckBox, nightCheckBox]);
 
