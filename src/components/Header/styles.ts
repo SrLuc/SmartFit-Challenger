@@ -11,4 +11,8 @@ export const StyledHeader = styled.header`
   img {
     width: 250px;
   }
+
+  @media (max-width: 1000px) {
+    padding: 20px 0;
+  }
 `;

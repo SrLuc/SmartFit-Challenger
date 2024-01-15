@@ -8,6 +8,10 @@ export const StyledHeading = styled.div`
     font-size: 3rem;
     margin-bottom: 1rem;
     color: var(--dark-grey);
+
+    @media (max-width: 1000px) {
+      font-size: 2rem;
+    }
   }
 
   hr {
@@ -16,11 +20,19 @@ export const StyledHeading = styled.div`
     background-color: var(--dark-grey);
     border: none;
     margin-bottom: 1rem;
+
+    @media (max-width: 1000px) {
+      width: 40%;
+    }
   }
 
   p {
     font-size: 1.6rem;
     line-height: 1.5;
     margin: 25px 0;
+
+    @media (max-width: 1000px) {
+      font-size: 1.2rem;
+    }
   }
 `;

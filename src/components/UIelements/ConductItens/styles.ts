@@ -47,7 +47,7 @@ export const StyledItemConduct = styled.section`
 
     @media screen {
       @media (max-width: 1224px) {
-        width: 80%;
+        width: 75%;
         margin: 0 10px;
       }
     }
@@ -56,5 +56,11 @@ export const StyledItemConduct = styled.section`
   p {
     text-align: center;
     font-size: 1.2rem;
+
+    @media screen {
+      @media (max-width: 1224px) {
+        font-size: 1rem;
+      }
+    }
   }
 `;

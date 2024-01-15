@@ -38,4 +38,8 @@ export const StyledMain = styled.main`
     align-items: center;
     gap: 30px;
   };
+
+  @media (max-width: 1000px) {
+    margin: 10px;
+  }
 `;
