@@ -30,6 +30,10 @@ export const StyledMain = styled.main`
     font-weight: 300;
     color: var(--median-grey);
     margin: 20px;
+
+    @media (max-width: 1000px) {
+      font-size: 23px;
+    }
   }
 
   div {

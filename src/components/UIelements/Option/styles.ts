@@ -13,13 +13,17 @@ export const Nav = styled.nav`
     font-size: 24px;
     color: var(--median-grey);
 
+    @media (max-width: 1000px) {
+      font-size: 18px;
+    }
+
     input {
       appearance: none;
       background-color: #fff;
       border: 3px solid var(--median-grey);
       border-radius: 50%;
       height: 25px;
-      width:25px;
+      width: 25px;
     }
 
     input:checked {
@@ -33,6 +37,10 @@ export const Nav = styled.nav`
       font-weight: 300;
       font-size: 24px;
       color: var(--median-grey);
+
+      @media (max-width: 1000px) {
+        font-size: 18px;
+      }
     }
   }
 
