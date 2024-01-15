@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMain = styled.main`
-  margin: 0 70px;
+  margin: 0 20px;
   padding: 20px;
   border: 6px solid var(--light-grey);
   border-radius: 8px;

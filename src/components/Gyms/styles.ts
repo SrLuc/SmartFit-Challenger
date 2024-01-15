@@ -55,8 +55,8 @@ export const StyledGymItem = styled.div`
     align-items: center;
 
     img {
-      width: 100px;
-      height: 100px;
+      width: 90px;
+      height: 90px;
       margin: 5px;
     }
   }
@@ -78,7 +78,7 @@ export const StyledGymItem = styled.div`
   }
 
   @media (max-width: 1000px) {
-    width: 95%;
+    width: 90%;
     margin: 15px 0;
   }
 `;
@@ -112,7 +112,7 @@ export const StyledGymSchedule = styled.li`
     text-align: center;
 
     @media (max-width: 1000px) {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
   }
 
@@ -128,10 +128,10 @@ export const StyledGymSchedule = styled.li`
 export const StyledNoResults = styled.div`
 
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 10px;
-  margin: 10px 20px;
+ 
 
   P {
     color: var(--dark-grey);

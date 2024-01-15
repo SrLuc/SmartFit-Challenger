@@ -4,7 +4,7 @@ export const Section = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 5px;
 
   div {
     display: flex;
@@ -13,7 +13,7 @@ export const Section = styled.section`
     font-weight: bold;
 
     label {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 400;
       color: var(--dark-grey);
     }
@@ -24,7 +24,7 @@ export const Section = styled.section`
     }
 
     p {
-      font-size: 22px;
+      font-size: 18px;
       color: var(--dark-grey);
 
       span {

@@ -21,7 +21,7 @@ export const StyledBoxConduct = styled.section`
       @media (max-width: 1224px) {
         box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
         border-radius: 10px;
-        padding: 30px;
+        padding: 10px;
       }
     }
   }
@@ -31,8 +31,8 @@ export const StyledBoxConduct = styled.section`
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 1.5rem;
-    padding: 15px;
+    font-size: 1.3rem;
+    padding: 10px;
     color: var(--dark-grey);
   }
 `;
@@ -43,11 +43,11 @@ export const StyledItemConduct = styled.section`
   align-items: center;
 
   img {
-    width: 105px;
+    width: 90px;
 
     @media screen {
       @media (max-width: 1224px) {
-        width: 90%;
+        width: 80%;
         margin: 0 10px;
       }
     }
