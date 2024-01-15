@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledSearchButton = styled.button`
   width: 35%;
   padding: 20px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   border: none;
   border-radius: 9px;
@@ -19,6 +19,8 @@ export const StyledSearchButton = styled.button`
   @media screen {
     @media (max-width: 768px) {
       width: 70%;
+      font-size: 15px;
+      padding: 20px;
     }
   }
 `;
@@ -38,5 +40,13 @@ export const StyledClearButton = styled.button`
     background-color: var(--median-grey);
     color: #fff;
     transition: all 0.1s ease-in-out;
+  }
+
+  @media screen {
+    @media (max-width: 768px) {
+      width: 30%;
+      font-size: 15px;
+      padding: 20px;
+    }
   }
 `;

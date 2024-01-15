@@ -36,11 +36,11 @@ export const Section = styled.section`
     @media screen {
       @media (max-width: 768px) {
         label {
-          font-size: 20px;
+          font-size: 17px;
         }
         input {
-          width: 50px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
         }
       }
     }

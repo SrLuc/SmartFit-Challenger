@@ -78,8 +78,7 @@ export const StyledGymItem = styled.div`
   }
 
   @media (max-width: 1000px) {
-    width: 90%;
-    margin: 15px 0;
+    width: 85%;
   }
 `;
 
@@ -126,12 +125,11 @@ export const StyledGymSchedule = styled.li`
 `;
 
 export const StyledNoResults = styled.div`
-
   width: 100%;
   padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 10px;
- 
 
   P {
     color: var(--dark-grey);
