@@ -38,7 +38,7 @@ const Panel = () => {
                 opened,
                 schedules,
               }: GymProps) => {
-                if (opened == true || gymChecks) {
+                if (opened == true) {
                   return (
                     <Gym
                       key={id}
@@ -62,6 +62,20 @@ const Panel = () => {
                           ? partialLockerRoom
                           : forbiddenLockerRoom
                       }
+                    />
+                  );
+                } else {
+                  return (
+                    <Gym
+                      key={id}
+                      schedules={schedules}
+                      opened={opened}
+                      title={title}
+                      content={content}
+                      mask={requiredMask}
+                      towel={requiredTowel}
+                      fountain={forbiddenFountain}
+                      locker_room={forbiddenLockerRoom}
                     />
                   );
                 }
