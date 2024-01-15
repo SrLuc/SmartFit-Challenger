@@ -18,74 +18,60 @@ import Container from "../UIelements/ContainerFlex";
 import Gym from "./Gym";
 
 const Panel = () => {
-  const {
-    gymsList,
-    gymChecks
-  } = useContext(GymContext);
+  const { gymsList, gymChecks } = useContext(GymContext);
+
+  const isSearchCompleted = gymsList.length > 0 || gymChecks;
 
   return (
     <Container>
       <S.StyledGymPanel>
-        {gymsList.map(
-          ({
-            id,
-            title,
-            content,
-            mask,
-            towel,
-            fountain,
-            locker_room,
-            opened,
-            schedules,
-          }: GymProps) => {
-            if (opened == true) {
-              return (
-                <Gym
-                  key={id}
-                  schedules={schedules}
-                  opened={opened}
-                  title={title}
-                  content={content}
-                  mask={mask == "required" ? requiredMask : recommendedMask}
-                  towel={towel == "required" ? requiredTowel : recommendedTowel}
-                  fountain={
-                    fountain == "partial" ? partialFountain : forbiddenFountain
-                  }
-                  locker_room={
-                    locker_room == "allowed"
-                      ? requiredLockerRoom
-                      : locker_room == "partial"
-                      ? partialLockerRoom
-                      : forbiddenLockerRoom
-                  }
-                />
-              );
-            }
-            if (gymChecks == true) {
-              return (
-                <Gym
-                  key={id}
-                  schedules={schedules}
-                  opened={opened}
-                  title={title}
-                  content={content}
-                  mask={mask == "required" ? requiredMask : recommendedMask}
-                  towel={towel == "required" ? requiredTowel : recommendedTowel}
-                  fountain={
-                    fountain == "partial" ? partialFountain : forbiddenFountain
-                  }
-                  locker_room={
-                    locker_room == "allowed"
-                      ? requiredLockerRoom
-                      : locker_room == "partial"
-                      ? partialLockerRoom
-                      : forbiddenLockerRoom
-                  }
-                />
-              );
-            }
-          }
-        )}
+        {isSearchCompleted
+          ? gymsList.map(
+              ({
+                id,
+                title,
+                content,
+                mask,
+                towel,
+                fountain,
+                locker_room,
+                opened,
+                schedules,
+              }: GymProps) => {
+                if (opened == true || gymChecks) {
+                  return (
+                    <Gym
+                      key={id}
+                      schedules={schedules}
+                      opened={opened}
+                      title={title}
+                      content={content}
+                      mask={mask == "required" ? requiredMask : recommendedMask}
+                      towel={
+                        towel == "required" ? requiredTowel : recommendedTowel
+                      }
+                      fountain={
+                        fountain == "partial"
+                          ? partialFountain
+                          : forbiddenFountain
+                      }
+                      locker_room={
+                        locker_room == "allowed"
+                          ? requiredLockerRoom
+                          : locker_room == "partial"
+                          ? partialLockerRoom
+                          : forbiddenLockerRoom
+                      }
+                    />
+                  );
+                }
+              }
+            )
+          : gymsList.length === 0 && (
+              <S.StyledNoResults>
+                <p>Não foram encontrados Resultados..</p>
+              </S.StyledNoResults>
+            )}
       </S.StyledGymPanel>
     </Container>
   );

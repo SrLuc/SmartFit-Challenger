@@ -34,9 +34,7 @@ export const GymContext = createContext<GymContextProps>({
 
 export const GymProvider = ({ children }: GymContextProps) => {
   const [gymsList, setGymsList] = useState<GymProps[]>([]);
-
   const [gymChecks, setGymCheck] = useState(false);
-
   const [morningCheckBox, setMorningCheckBox] = useState(false);
   const [afternoonCheckBox, setAfternoonCheckBox] = useState(false);
   const [nightCheckBox, setNightCheckBox] = useState(false);

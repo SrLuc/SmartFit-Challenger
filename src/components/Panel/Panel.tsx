@@ -75,6 +75,9 @@ const Panel = () => {
 
   const clearGyms = () => {
     setGymsList([]);
+    setMorningCheckBox(false);
+    setAfternoonCheckBox(false);
+    setNightCheckBox(false);
   };
 
   const toggleStatusCheck = () => {

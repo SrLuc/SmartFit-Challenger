@@ -124,3 +124,18 @@ export const StyledGymSchedule = styled.li`
     width: 100%;
   }
 `;
+
+export const StyledNoResults = styled.div`
+
+  width: 100%;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 10px;
+  margin: 10px 20px;
+
+  P {
+    color: var(--dark-grey);
+    font-size: 1.5rem;
+    text-align: center;
+  }
+`;
