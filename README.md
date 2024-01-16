@@ -62,13 +62,6 @@ Para rodar o projeto em desenvolvimento use o comando
 
 https://smart-fit-challenger.vercel.app/
 
-
-
-## Screenshots
-
-![App Screenshot](https://drive.google.com/file/d/1mdMmTC0vhTsPZ0t4yzfBdfY3oWpZS8KF/view)
-![App Screenshot](https://drive.google.com/file/d/19O_7VhjJ8C5Uzx42Nk4wC2drcxlnDIdb/view)
-
 ## Stack utilizada
 
 **Front-end:** React, Typescript, Styled-Components, Axios
