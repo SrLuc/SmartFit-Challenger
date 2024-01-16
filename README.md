@@ -1,30 +1,76 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Frontend Smart Fit Challenger
 
-Currently, two official plugins are available:
+Este é um projeto desenvolvido como parte do desafio para a avaliação de habilidades técnicas no papel de Front-end para a Smart Fit. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O objetivo é criar uma página de busca de unidades, considerando diversas regras de negócios e seguindo o layout fornecido.
 
-## Expanding the ESLint configuration
+Link para o Desafio : https://github.com/bioritmo/front-end-code-challenge-smartsite 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Link para a Aplicação : https://smart-fit-challenger.vercel.app/
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Funcionalidades
+
+**Carregar Unidades:**
+
+- Utiliza a API fornecida para carregar as unidades via método GET.
+
+**Buscar Todas as Unidades:**
+
+- Fazer uma busca em todas as unidades disponíveis.
+
+**Busca de unidades com filtros**
+
+- Considerar o status de academias (abertas/fechadas) e período de funcionamento.
+
+**Buscar de unidades de acordo com o horário de funcionamento** 
+
+- Considerar o horário de funcionamento das academias para renderiza-las
+
+**Mostrar Previsão de Resultados:**
+
+- Apresenta uma previsão de resultados encontrados após a aplicação dos filtros.
+
+**Mostrar Unidades ao Buscar:**
+
+- Exibe a lista de unidades correspondentes à busca.
+
+
+## Instalação
+
+Faça o clone do projeto para a máquina local
+
+```bash
+  git clone https://github.com/SrLuc/SmartFit-Challenger.git
+```
+    
+Vá para o diretório raíz do projeto e Instale as dependencias do projeto com npm 
+
+```bash
+    cd SmartFit-Challenger
+    npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Para rodar o projeto em desenvolvimento use o comando 
+
+```bash
+    npm run dev
+```
+
+## Demonstração
+
+https://smart-fit-challenger.vercel.app/
+
+
+
+## Screenshots
+
+![App Screenshot](https://drive.google.com/file/d/1mdMmTC0vhTsPZ0t4yzfBdfY3oWpZS8KF/view)
+![App Screenshot](https://drive.google.com/file/d/19O_7VhjJ8C5Uzx42Nk4wC2drcxlnDIdb/view)
+
+## Stack utilizada
+
+**Front-end:** React, Typescript, Styled-Components, Axios
+
+
